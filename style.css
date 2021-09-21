@@ -1,5 +1,4 @@
 *{
-    padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
@@ -8,127 +7,232 @@ body{
     height: 100%;
     color: white;
     background: black;
-    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.container::before{
-    content: "";
-    background: url(img2/netflix.jpg) no-repeat center center/cover;
-    position: absolute;
-    height: 100%;
+.container .head{
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        align-items: center;
+        display: flex;
+        padding: 0 50px;
+        z-index: 100000;
+    }
+.container .head img{
+        width: 13%;
+    }
+.banner{
     width: 100%;
-    opacity: 0.3;
-    z-index: -1;
+    height:100vh;
+    position:relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
-.container .navbar{
-    height: 100px;
-    display: flex;
+.banner::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 400px;
+    z-index: 1;
+    background: linear-gradient(to bottom,#000,transparent);
 }
-.container .navbar .left{
+.banner::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 400px;
+    z-index: 1;
+    background: linear-gradient(to top,#000,transparent);
+}
+.banner .fit{
+    width: 100%;
     height: 100%;
-    display: flex;
-    float: left;
-}
-.container .navbar .left img{
-    height: 100px;
+    object-fit: cover;
+    background-repeat: no-repeat;
     position: absolute;
-    left: 35px;
+    top: 0;
+    left: 0;
 }
-.container .navbar .right{
-    display: flex;
-    height: 100px;
-    float: right;
-    position: absolute;
-    right: 50px;
+.banner .box{
+    position:absolute;
+    top: 55%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    z-index: 1000;
 }
-.container .navbar .right .language{
-    margin: auto;
-    align-items: center;
+.banner .box .heading{
+    display:flex;
+    flex-direction: column;
     justify-content: center;
-    font-size: 18px;
-    padding: 7px 10px;
-    color: white;
-    background: none;
-    cursor: pointer;
-    margin-right: 15px;
-}
-.container .navbar .right .language option{
-    background-color: grey;
-}
-.container .navbar .right button{
-    margin: auto;
     align-items: center;
-    justify-content: center;
-    font-size: 18px;
+    text-align: center;
+
+}
+.banner .box .heading h2{
+    width: 80%;
+    color:#fff;
+    letter-spacing: 2px; 
+    font-size: 3.125rem;
+    text-align: center;
+}
+.banner .box .heading h5{
+    color:#fff;
     font-weight: 400;
-    padding: 7px 17px;
-    background: #e50914;
-    cursor: pointer;
-    outline: none;
-    border-radius: 4px;
-    border: none;
+    font-size: 1.625rem;
+    padding: 1rem 0;
 }
-.container .navbar .right button a{
-    text-decoration: none;
-    color: white;
+.banner .box .heading p{
+    font-size: 1.2rem;
+    color:#fff;
+    font-weight: 500;
+    padding: 15px 0;
+    padding-bottom: 20px;
+
 }
-.container .title{
-    padding: 70px 45px;
-}
-.container .title .content{
-    width: 950px;
-    margin: auto;
-    padding: 75px 0;
-    text-align: center;
-}
-.container .title .content h1{
-    width: 650px;
-    margin: auto;
-    font-size: 3.1rem;
-    text-align: center;
-}
-.container .title .content h2{
-    width: 650px;
-    margin: auto;
-    font-size: 1.6rem;
-    text-align: center;
-}
-.container .title .content form h3{
-    font-size: 1rem;
-    margin: 18px 0;
-    text-align: center;
-}
-.container .title .content form .email{
-    width: 1000px;
-    margin: auto;
-}
-.container .title .content form .email input{
-    height: 60px;
-    width: 450px;
-    margin: auto;
-    padding: 20px;
-    font-size: 20px;
-    outline: none;
-}
-.container .title .content form .email button{
-    margin: auto;
-    height: 60px;
-    width: 180px;
-    align-items: center;
+.banner .box .search{
+    display:flex;
+    flex-direction: row;
     justify-content: center;
-    font-size: 20px;
-    padding: 7px 17px;
+    align-items: center;
+}
+.banner .box .search input{
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #8c8c8c;
+    color: #000;
+    border-radius: 2px;
+    min-width: 400px;
+    height: 50px;
+    margin: auto;
+    align-items: center;
+
+}
+.banner .box .search a{
+    min-width: 17.8rem;
+    line-height: 50px;
+    font-size: 1.625rem;
     background: #e50914;
     cursor: pointer;
-    outline: none;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-    border: none;
-    margin-left: -5px;
-}
-.container .title .content form .email button:hover{
-    background-color: #f40612;
-}
-.container .title .content form .email button a{
+    box-shadow: 0 1px 0 rgba(0, 0,0, 0.45);
+    border-radius: 2px;
+    text-transform: uppercase;
+    color:#fff;
     text-decoration: none;
-    color: white;
+    cursor: pointer;
+}
+.part1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 4rem;
+}
+.part1 .talk{
+    width: 40%;
+}
+.part1 .talk h1{
+    font-size: 3.3rem;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    color:#fff;
+}
+.part1 .talk p{
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    color:#fff;
+}
+.part1 .img{
+    width: 45%;
+}
+.part1 .img img{
+    width: 100%;
+}
+
+@media screen and (max-width: 787px){
+    .container .head{
+    padding: 20px 50px;
+}
+.container .head img{
+    width: 20%;
+}
+.banner .box .heading h2{
+    width: 100%;
+    letter-spacing: 1.5px; 
+    font-size: 3.1rem;
+}
+.banner .box .heading h5{
+    font-size: 1.4rem;
+    padding: 0.8rem 0;
+}
+.banner .box .heading p{
+    font-size: 1.1rem;
+    padding: 13px 0;
+    padding-bottom: 17px;
+
+}
+.banner .box .search{
+    flex-direction: column;
+}
+.banner .box .search input{
+    min-width: 310px;
+    margin-bottom: 20px;
+
+}
+.part1{
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+.part1 .talk{
+    width: 80%;
+}
+.part1 .talk h1{
+    font-size: 3.2rem;
+    letter-spacing: 1.5px;
+    padding-bottom: 5px;
+}
+.part1 .talk p{
+    font-size: 1.5rem;
+}
+.part1 .img{
+    width: 80%;
+}
+
+}
+@media screen and (max-width: 456px){
+    .container .head img{
+        width: 23%;
+    }
+    .banner .box .heading h2{
+        letter-spacing: 1.3px; 
+        font-size: 2.8rem;
+    }
+    .banner .box .heading h5{
+        font-size: 1.2rem;
+    }
+    .banner .box .heading p{
+        font-size: 1rem;
+        padding: 12px 0;
+        padding-bottom: 15px;
+    
+    }
+    .banner .box .search input{
+        margin-bottom: 10px;
+    
+    }
+    .part1 .talk h1{
+        font-size: 3rem;
+        letter-spacing: 1.2px;
+    }
+    .part1 .talk p{
+        font-size: 1.2rem;
+    }
 }
